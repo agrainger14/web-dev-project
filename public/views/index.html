@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodRec</title>
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-bg navbar-dark py-2 border-bottom">
+      <div class="container">
+        <a class="img-responsive" href="#">
+          <img src="./img/logo.png" class="mb-2" alt="MoodRec" height="48">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">   
+              <span class='navbar-nav text-center'>
+                <a class='font-color me-3 no-underline icon-hover' id='signupIcon' data-bs-toggle='modal' data-bs-target='#signupForm'>
+                  <i class='bi bi-person-fill-add d-block' style='font-size: 20px;'></i>
+                  <small>Sign up</small>
+                </a>
+              </span>
+            </li>
+            <li class='nav-item'>
+              <span class='navbar-nav text-center'>
+                <a class='font-color me-3 no-underline icon-hover' id='loginIcon' data-bs-toggle='modal' data-bs-target='#loginForm'>
+                  <i class='bi bi-door-open-fill d-block' style='font-size: 20px'></i>
+                  <small>Sign in</small>
+                </a>
+              </span>
+            </li>
+            <li class='nav-item'>  
+              <span class='navbar-nav text-center'>
+                <a class='font-color me-3 no-underline icon-hover' id='logoutIcon'>
+                  <i class='bi bi-box-arrow-left d-block' style='font-size: 20px'></i>
+                  <small>Log out</small>
+                </a>
+              </span>
+            </li>
+            <li class='nav-item'> 
+              <span class='navbar-nav text-center'>
+                <a class='font-color me-3 no-underline icon-hover' id='deleteIcon' data-bs-toggle='modal' data-bs-target='#deleteAccount'>
+                  <i class='bi bi-person-fill-x d-block' style='font-size: 20px'></i>
+                    <small>Delete Account</small>
+                </a>
+              </span>
+            </li>  
+          </ul>
+        </div>
+      </div>
+    </nav>
+                    
+  <!-- Showcase -->
+    <section class="showcase-bg text-center text-sm-start font-color">
+      <div class="container">
+        <div class="d-lg-flex align-items-center justify-content-between">
+          <div>
+            <h1 class="pt-2">Welcome to MoodRec</h1>
+              <h4 class=>An online mood tracking web-journal.</h4>
+                <p class="lead my-1 font-color">
+                  Mood journaling involves recording your mood over periods of time so that you can recognise trends and potential triggers. 
+                  Once these trends are recognised, you can work to eliminate and avoid certain triggers and focus your energy on how best to respond.
+                  Journaling your feelings, emotions and challenges has been shown to reduce anxiety and depression.
+                </p>
+                <p class="lead my-3 font-color">
+                  After logging into MoodRec, the website features will become available.
+                  Members are able to utilise the features to log a mood entry, view previous recorded entries or a visual mood summary.
+                </p>
+          </div>
+          <img class="showcase-img img-fluid" src="./img/showcase.png">
+        </div>  
+      </div>
+    </section>
+    
+  <!-- Choice boxes -->
+    <section class="p-4 gradient-bg">
+      <div class="container">
+        <div class="row text-center">
+          <div class='text-center h3 font-color' id="welcomeText"></div>
+            <div class="col-md-4 p-3">
+              <div class="card box-bg font-color">
+                <div class="card-body text-center">
+                  <div class="h1 mb-3">
+                    <i class="bi bi-journal-text"></i>
+                  </div>
+                    <h3 class="card-title mb-3">
+                      Mood Log
+                    </h3>
+                    <p class="card-text">
+                      A mood log session will begin and a visual slider will be displayed to help represent how your currently feeling. 
+                      Additional context into your mood can also be entered and if needed a pre-populated list of moods can also be chosen.
+                    </p>
+                    <div class='d-flex justify-content-center'>
+                      <a class='btn btn-md button-color me-2 mb-1 font-color' id='logButton' data-bs-toggle='modal' data-bs-target='#moodLog'>
+                        Mood Log
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 p-3">
+                <div class="card box-bg font-color">
+                  <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                      <i class="bi bi-list-nested"></i>
+                    </div>
+                    <h3 class="card-title mb-3">
+                      Mood List
+                    </h3>
+                    <p class="card-text">
+                      View a list of all your previously recorded mood logs that are stored within the database.
+                      You also will be given the option to update the context of previous recorded mood logs if required, or delete previously recorded entries.
+                    </p>
+                    <div class='d-flex justify-content-center'>
+                      <a class='btn btn-md button-color me-2 mb-1' id="listButton" href="./moodlist.html">
+                        Mood List 
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 p-3">
+                <div class="card box-bg font-color">
+                  <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                      <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <h3 class="card-title mb-3">
+                      Mood Summary
+                    </h3>
+                    <p class="card-text">
+                      A summary of your recorded moods will be displayed to provide a visual representation 
+                      and an analysis of your mood logs. 
+                      A mood score, mood count and trending chart will be generated for the user.
+                    </p>
+                    <div class='d-flex justify-content-center'>
+                      <a class='btn btn-md button-color font-color me-2 mb-1' id='summaryButton' href="./moodsummary.html">
+                        Mood Summary
+                      </a> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+  <!-- Quote of the day section -->
+    <section class="text-center p-1">
+      <blockquote class="blockquote">
+        <div class="justify-content-center" id="qotd">
+        </div>
+      </blockquote>
+    </section>
+     
+  <!-- Footer -->
+    <footer class="text-center position-relative">
+      <div class="lower-font-color">MoodRec | MoodRec.com
+        <a href="#" class="d-flex justify-content-center">
+          <i class="bi bi-arrow-up-circle h2 lower-font-color"></i>
+        </a>
+      </div>
+    </footer>
+
+
+  <!-- Modal Login Form -->
+    <div class="modal fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="loginFormLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title w-100" id="loginFormLabel">Log In</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <form class="form" id="loginFormData">
+              <div class="form-floating mb-3 mt-5">
+                <input type="text" name="username" class="form-control" pattern="[a-zA-Z0-9]+" title="Username can only be character/number combinations." required>    
+                  <label for="usernameField" class="col-form-label">Username:</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" name="password" autocomplete="on" class="form-control">
+                  <label for="passwordField" class="col-form-label">Password:</label>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-md button-color font-color me-2 mb-1" type="submit" name="submitted" id="loginSubmit">Sign in</button>
+                </div>
+                <div class="d-grid mb-3 text-center mt-2">
+                  Don't have an account? <a href="#" data-bs-toggle='modal' data-bs-target='#signupForm'>Sign up</a>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Sign up Form -->
+    <div class="modal fade" id="signupForm" tabindex="-1" role="dialog" aria-labelledby="signupFormLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title w-100" id="signupFormLabel">Sign Up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <form class="form" id="signupFormData">
+              <div class="form-floating mb-3">
+                <input type="text" name="first_name" class="form-control" pattern="[a-zA-Z]+" title="Name can only be character combinations.">    
+                  <label for="firstnameField" class="col-form-label" >(Optional) First name:</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control" pattern="[a-zA-Z0-9]+" title="Username can only be character/number combinations." required minlength="5">    
+                <label for="usernameField" class="col-form-label">Username:</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" name="password" autocomplete="on" class="form-control" id="password" required>
+                <label for="passwordField" class="col-form-label">Password:</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" name="repeatpassword" autocomplete="on" class="form-control" id="repeat" required>
+                <label for="repeatPasswordField" class="col-form-label">Repeat Password:</label>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-md button-color font-color me-2 mb-1" type="submit" name="submitted" id="signupSubmit">Sign up</button>
+              </div>
+            </form>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Delete Account -->
+    <div class="modal fade" id="deleteAccount" tabindex="-1" role="dialog" aria-labelledby="deleteAccountLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title w-100" id="deleteAccountLabel">Delete Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <h4>Would you like to delete your account?</h4>
+            <p>Warning: All previously recorded mood logs will be deleted and you will have to register again.</p>
+            <a class="btn btn-md button-color font-color me-2 mb-1" id="deleteAccountButton">Delete account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Mood Log Form -->
+    <div class="modal fade" id="moodLog" tabindex="-1" role="dialog" aria-labelledby="moodLogLabel" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title w-100" id="moodLogLabel">Mood Log</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="card-body p-4">
+            <form class="form" id="moodlogForm">
+              <div class="text-center">
+                <label for="customRange1" class="form-label lead">How are you feeling today?</label>
+                  <input type="range" name="rating" class="form-range" min="1" max="5" id="sliderChoice">
+                  <img class="d-block img-fluid" src="./img/moodlog.png">
+                  <div class="text-center mt-1 custom-slider" id="sliderText"></div>
+              </div>
+              <div class="container mt-3" id="buttonGrid">
+                <div class="text-center lead mb-2">You can also select a mood from a list of the provided moods.</div>
+                  <div class="row text-center">
+                    <div class="btn-toolbar card-footer d-flex justify-content-between" role="toolbar">
+                      <div class="d-grid col-6 px-3 mb-1 ">
+                        <input type="radio" class="btn-check" name="mood" id="mood1" autocomplete="off">
+                        <label class="btn btn-outline-warning px-2" for="mood1" id="b1"></label>
+                      </div>
+                      <div class="d-grid col-6 px-3 mb-1">
+                        <input type="radio" class="btn-check" name="mood" id="mood2" autocomplete="off" >
+                        <label class="btn btn-outline-warning px-2" for="mood2" id="b2"></label>
+                      </div>
+                      <div class="d-grid col-6 px-3 mb-1">
+                        <input type="radio" class="btn-check" name="mood" id="mood3" autocomplete="off" >
+                        <label class="btn btn-outline-warning px-2" for="mood3" id="b3"></label>
+                      </div>
+                      <div class="d-grid col-6 px-3 mb-1">
+                        <input type="radio" class="btn-check" name="mood" id="mood4" autocomplete="off">
+                        <label class="btn btn-outline-warning px-2" for="mood4" id="b4"></label>
+                      </div>
+                      <div class="d-grid col-6 px-3 mb-1">
+                        <input type="radio" class="btn-check" name="mood" id="mood5" autocomplete="off">
+                        <label class="btn btn-outline-warning px-2" for="mood5" id="b5"></label>
+                      </div>
+                      <div class="d-grid col-6 px-3 mb-1">
+                        <input type="radio" class="btn-check" name="mood" id="mood6" autocomplete="off">
+                        <label class="btn btn-outline-warning px-2" for="mood6" id="b6"></label>
+                      </div>
+                      <div class="d-grid col-12 px-3 mb-4 ">
+                        <input type="radio" class="btn-check" name="mood" id="default" autocomplete="off" hidden checked>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="lead">Optional Context:</div>
+                </div>
+                <div class="form-floating mb-3">
+                  <textarea name="context" class="form-control" style="height: 200px" maxlength="255" oninput="textareaLengthCheck(this)"></textarea>
+                  <label for="contextField" id="textCounter">Characters left: 255</label>
+                </div>                   
+                <div class="d-grid">
+                  <button class="btn btn-md button-color font-color me-2 mb-1" type="submit" name="submitted" id="moodlogSubmit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  <!-- Modal Mood Log Success -->
+    <div class="modal fade" id="moodlogSuccess" tabindex="-1" role="dialog" aria-labelledby="moodlogSuccessLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <h4 class="pb-3">Mood log successfully added!</h4>
+            <a class="btn btn-md button-color font-color me-2 mb-1" id="homeButton">Home</a>
+            <a class="btn btn-md button-color font-color me-2 mb-1" href="./moodlist.html">See Mood List</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/login.js"></script>
+  <script src="/js/signup.js"></script>
+  <script src="/js/moodlog.js"></script>
+</body>
+</html>

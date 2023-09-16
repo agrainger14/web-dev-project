@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodRec</title>
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-bg navbar-dark py-2 border-bottom">
+      <div class="container">
+        <a class="img-responsive" href="./index.html">
+          <img src="./img/logo.png" class="mb-2" alt="MoodRec" height="48">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">   
+              <span class='navbar-nav text-center'>
+                <a class='font-color me-3 no-underline icon-hover' href="./index.html">
+                  <i class='bi bi-house-door-fill d-block' style='font-size: 20px;'></i>
+                  <small>Home</small>
+                </a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!-- Mood List Table -->
+    <div class="p-4 p-sm-5">
+      <div class="container" id="container">
+        <div class="table-responsive">
+          <table id="moodlistTable" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Date/Time</th>
+                  <th scope="col">Mood</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col" data-orderable="false">Context</th>
+                  <th scope="col" data-orderable="false">Edit</th>
+                  <th scope="col" data-orderable="false">Delete</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Context Edit -->
+    <div class="modal fade" id="contextEdit" tabindex="-1" role="dialog" aria-labelledby="contextEditLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title w-100" id="contextEditLabel">Context Edit</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        <div class="card-body p-4 p-sm-5">
+          <form class="form" id="contextEditForm">
+            <div class="col-sm-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="mood" id="dateLogged" readonly></input>
+                <label for="dateLogged">Date and time of log: </label>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="mood" id="moodEditLog" readonly></input>
+              <label for="moodEditField">Mood logged:</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea name="context" class="form-control" style="height: 200px" id="contextEditId" maxlength="255"></textarea>
+              <label for="contextEditField">Update Context:</label>
+            </div>
+            <div class="d-grid">
+             <button class="btn btn-md button-color font-color me-2 mb-1" type="submit" name="submitted" id="editContextSubmit">Submit</button>
+            </div>
+              <input type="hidden" id="updateId" value=""> 
+            </form>
+          </div>
+        </div>
+      </div>
+   </div>
+
+  <!-- Modal Edit Success -->
+    <div class="modal fade" id="moodlogEdit" tabindex="-1" role="dialog" aria-labelledby="moodlogEditLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <h4 class="pb-3">Mood log context successfully edited!</h4>
+            <a class="btn btn-md button-color font-color me-2 mb-1" id="editClose">Back to Mood List</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Delete Success -->
+    <div class="modal fade" id="moodlogDelete" tabindex="-1" role="dialog" aria-labelledby="moodlogDeleteLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <h4 class="pb-3">Mood log successfully deleted!</h4>
+            <a class="btn btn-md button-color font-color me-2 mb-1" id="deleteClose">Back to Mood List</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer -->
+    <footer class="text-center">
+      <div class="lower-font-color">MoodRec | MoodRec.com
+        <a href="#" class="d-flex justify-content-center">
+          <i class="bi bi-arrow-up-circle h2 lower-font-color"></i>
+        </a>
+      </div>
+    </footer>
+                  
+  <script src="/js/global.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery.dataTables.min.js"></script>
+  <script src="/js/dataTables.bootstrap5.min.js"></script>
+  <script src="/js/moodlist.js"></script>
+</body>
+</html>

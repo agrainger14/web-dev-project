@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
+    "chart.js": "^4.2.1",
+    "cookie-parser": "^1.4.6",
+    "datatables.net": "^1.13.2",
+    "datatables.net-bs5": "^1.13.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jquery": "^3.6.3",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "name": "webdevproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Andrew Grainger",
+  "license": "ISC",
+  "description": "web development project as part of CSC7084"
+}

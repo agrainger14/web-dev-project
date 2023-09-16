@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodRec</title>
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="linear-bg">
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-bg navbar-dark py-2 border-bottom">
+      <div class="container">
+        <a class="img-responsive" href="./index.html">
+          <img src="./img/logo.png" class="mb-2" alt="MoodRec" height="48">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">   
+              <span class='navbar-nav text-center'>
+                <a class='font-color me-3 no-underline icon-hover' href="./index.html">
+                  <i class='bi bi-house-door-fill d-block' style='font-size: 20px;'></i>
+                  <small>Home</small>
+                </a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!-- Mood Summary Charts -->
+    <div class="container lead" style="border-style: inset; background-color: white;">
+      <div class="row pt-3">
+        <div class="col pt-5" style="height: 280px; width: 450px;">
+          <canvas id="moodScoreChart"></canvas>
+        </div>
+        <div class="col">
+          <h2>Mood Score</h2>
+          <p>The score is rated from 0 - 100, a score closer to 0 represents that you have logged more negative moods while a score closer to
+             100 means you have logged more positive moods.
+          </p>
+          <p class="h4 text-center" id="moodScoreResponse"></p>
+          <p class="h6 text-center" id="additionalInfo"></p>
+          <ul class="d-sm-flex" id="tipList"></ul>
+          <div class="text-center">
+            <a target="_blank" id="source"></a>
+          </div>
+        </div>
+        <div class="col-sm-12 pb-4 pt-2">
+          <div class="border-line"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="mx-sm-4">Mood Count</h2>
+          <p class="mx-sm-4">
+            An interactive chart which provides a visual display of all the ratings from your recorded moods.
+            The value centered within the chart displays a total of all logs recorded and the colour coded legends provides a visual of the
+            different values.
+          </p>
+          <h4 class="mx-sm-4" id="moodLogged"></h4>
+        </div>
+        <div class="col" style="height: 300px; width: 700px;">
+          <canvas id="moodCountChart" ></canvas>
+        </div>
+      </div>
+      <div class="col-sm-12 pb-4 pt-2">
+        <div class="border-line"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4 class="text-center">The line chart is a visualisation of the latest 25 mood logs recorded across the labelled dates and times.</h4>
+          <h5 class="text-center">Areas in green represent a period in which your felt more positive and red areas represent negative entries.</h5>
+          <div class="table-responsive pb-5">
+            <canvas id="lineChart"></canvas></div>
+          </div>
+      </div>
+    </div>
+    
+  <!-- Footer -->
+    <footer class="text-center">
+      <div class="lower-font-color">MoodRec | MoodRec.com
+        <a href="#" class="d-flex justify-content-center">
+          <i class="bi bi-arrow-up-circle h2 lower-font-color"></i>
+        </a>
+      </div>
+    </footer>
+        
+  <script src="/js/global.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery.dataTables.min.js"></script>
+  <script src="/js/dataTables.bootstrap5.min.js"></script>
+  <script src="/js/chart.umd.js"></script>
+  <script src="/js/moodsummary.js"></script>
+</body>
+</html>
